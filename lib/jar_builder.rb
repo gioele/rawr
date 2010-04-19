@@ -99,7 +99,9 @@ module Rawr
               File.join(@location_in_jar, remapped_file_path)
             end
             src_file_path = File.join(@directory, file)
+if ! file_path_in_zip.match /^lib/
             zipfile.add(file_path_in_zip, src_file_path)
+end
           end
         end
 
